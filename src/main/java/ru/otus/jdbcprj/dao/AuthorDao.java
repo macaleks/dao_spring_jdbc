@@ -1,5 +1,6 @@
 package ru.otus.jdbcprj.dao;
 
+import org.springframework.stereotype.Repository;
 import ru.otus.jdbcprj.model.Author;
 
 import java.util.List;

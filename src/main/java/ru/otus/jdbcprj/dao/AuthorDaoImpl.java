@@ -2,11 +2,13 @@ package ru.otus.jdbcprj.dao;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+import org.springframework.stereotype.Repository;
 import ru.otus.jdbcprj.model.Author;
 
 import java.util.HashMap;
 import java.util.List;
 
+@Repository
 public class AuthorDaoImpl implements AuthorDao {
 
     private final NamedParameterJdbcOperations namedParameterJdbcOperations;

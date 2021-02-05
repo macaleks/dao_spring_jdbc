@@ -2,6 +2,7 @@ package ru.otus.jdbcprj.dao;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+import org.springframework.stereotype.Repository;
 import ru.otus.jdbcprj.model.Book;
 
 import java.util.Arrays;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+@Repository
 public class BookDaoImpl implements BookDao {
 
     private final NamedParameterJdbcOperations namedParameterJdbcOperations;
