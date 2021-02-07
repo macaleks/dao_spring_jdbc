@@ -1,4 +1,10 @@
 package ru.otus.jdbcprj.service;
 
-public class AuthorService {
+import ru.otus.jdbcprj.model.Author;
+
+import java.util.List;
+
+public interface AuthorService {
+
+    List<Author> getAll();
 }

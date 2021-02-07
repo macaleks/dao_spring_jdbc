@@ -1,25 +1,26 @@
 package ru.otus.jdbcprj.model;
 
-import java.util.List;
+import javax.annotation.Generated;
 
 public class Book {
-    private int id;
-    private String name;
-    private List<Integer> authorIds;
-    private List<Integer> genreIds;
 
-    public Book(int id, String name, List<Integer> authorIds, List<Integer> genreIds) {
+    private Integer id;
+    private String name;
+    private Author author;
+    private Genre genre;
+
+    public Book(Integer id, String name, Author author, Genre genre) {
         this.id = id;
         this.name = name;
-        this.authorIds = authorIds;
-        this.genreIds = genreIds;
+        this.author = author;
+        this.genre = genre;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -31,29 +32,24 @@ public class Book {
         this.name = name;
     }
 
-    public List<Integer> getAuthorIds() {
-        return authorIds;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthorIds(List<Integer> authorIds) {
-        this.authorIds = authorIds;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
-    public List<Integer> getGenreIds() {
-        return genreIds;
+    public Genre getGenre() {
+        return genre;
     }
 
-    public void setGenreIds(List<Integer> genreIds) {
-        this.genreIds = genreIds;
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", authorIds=" + authorIds +
-                ", genreIds=" + genreIds +
-                '}';
+        return id + ", " + name + ", {" + author + "}, {" + genre + "}";
     }
 }

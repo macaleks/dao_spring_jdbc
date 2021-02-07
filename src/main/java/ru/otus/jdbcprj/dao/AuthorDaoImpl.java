@@ -37,31 +37,4 @@ public class AuthorDaoImpl implements AuthorDao {
         String sql = "select id, first_name, second_name from authors";
         return namedParameterJdbcOperations.query(sql, mapper);
     }
-
-    @Override
-    public int insert(Author author) {
-        String sql = "insert into authors(id, first_name, second_name) values (:id, :first_name, :second_name)";
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("id", author.getId());
-        params.put("first_name", author.getFirstName());
-        params.put("second_name", author.getSecondName());
-        return namedParameterJdbcOperations.update(sql, params);
-    }
-
-    @Override
-    public int update(Author author) {
-        String sql = "update authors set first_name = :first_name, second_name = :second_name where id = :id";
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("first_name", author.getFirstName());
-        params.put("second_name", author.getSecondName());
-        return namedParameterJdbcOperations.update(sql, params);
-    }
-
-    @Override
-    public int deleteById(int id) {
-        String sql = "delete from authors where id = :id";
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("id", id);
-        return namedParameterJdbcOperations.update(sql, params);
-    }
 }

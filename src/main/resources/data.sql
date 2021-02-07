@@ -1,8 +1,4 @@
 --
-insert into books(id, name) values (1, 'Good Omens');
-insert into books(id, name) values (2, 'Heads You Lose');
-insert into books(id, name) values (3, 'Between the Lines');
-
 insert into authors(id, first_name, second_name) values (1, 'Neil', 'Gaiman');
 insert into authors(id, first_name, second_name) values (2, 'Terry' ,'Pratchett');
 insert into authors(id, first_name, second_name) values (3, 'Lisa', 'Lutz');
@@ -22,15 +18,6 @@ insert into genres(id, name) values (8, 'fantasy');
 insert into genres(id, name) values (9, 'mystery');
 
 
-insert into author_map(id_book, id_author) values (1, 1);
-insert into author_map(id_book, id_author) values (1, 2);
-insert into author_map(id_book, id_author) values (2, 3);
-insert into author_map(id_book, id_author) values (2, 4);
-insert into author_map(id_book, id_author) values (3, 5);
-insert into author_map(id_book, id_author) values (3, 6);
-
-
-insert into genre_map(id_book, id_genre) values(1, 1);
-insert into genre_map(id_book, id_genre) values(2, 7);
-insert into genre_map(id_book, id_genre) values(3, 8);
-insert into genre_map(id_book, id_genre) values(3, 6);
+insert into books(id, name, id_author, id_genre) values (book_seq.nextval, 'Good Omens', 1, 7);
+insert into books(id, name, id_author, id_genre) values (book_seq.nextval, 'Heads You Lose', 4, 9);
+insert into books(id, name, id_author, id_genre) values (book_seq.nextval, 'Between the Lines', 6, 1);

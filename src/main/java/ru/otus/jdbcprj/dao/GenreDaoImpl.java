@@ -37,30 +37,4 @@ public class GenreDaoImpl implements GenreDao {
         String sql = "select id, name from genres";
         return namedParameterJdbcOperations.query(sql, mapper);
     }
-
-    @Override
-    public int insert(Genre genre) {
-        String sql = "insert into genre(id, name) values (:id, :name)";
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("id", genre.getId());
-        params.put("name", genre.getName());
-        return namedParameterJdbcOperations.update(sql, params);
-    }
-
-    @Override
-    public int update(Genre genre) {
-        String sql = "update genre set name = :name where id = :id";
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("id", genre.getId());
-        params.put("name", genre.getName());
-        return namedParameterJdbcOperations.update(sql, params);
-    }
-
-    @Override
-    public int deleteById(int id) {
-        String sql = "delete from genre where id = :id";
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("id", id);
-        return namedParameterJdbcOperations.update(sql, params);
-    }
 }

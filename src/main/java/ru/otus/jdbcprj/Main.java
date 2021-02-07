@@ -3,8 +3,8 @@ package ru.otus.jdbcprj;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import ru.otus.jdbcprj.dao.AuthorDao;
-import ru.otus.jdbcprj.model.Author;
+import ru.otus.jdbcprj.dao.GenreDao;
+import ru.otus.jdbcprj.model.Genre;
 
 @SpringBootApplication
 public class Main {
@@ -13,13 +13,14 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext context = SpringApplication.run(Main.class);
 
-        AuthorDao authorDao = context.getBean(AuthorDao.class);
+        GenreDao genreDao = context.getBean(GenreDao.class);
 
-        Author author = authorDao.getById(1);
+        Genre genre = genreDao.getById(1);
 
-        System.out.println(author);
+        System.out.println(genre);
 
-        authorDao.getAll().stream().forEach(System.out::println);
+//        genreDao.getAll().stream().forEach(System.out::println);
+        genreDao.getAll().stream().forEach(System.out::println);
     }
 
 }

@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface BookDao {
 
-    Book getById(int id);
     List<Book> getAll();
-    void insert(Book book);
-    void update(Book book);
-    void deleteById(int id);
+
+    int insert(Book book);
+
+    int update(Book book);
+
+    int deleteById(int id);
 }
